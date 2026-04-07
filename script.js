@@ -17,7 +17,7 @@ search.addEventListener('click', () => {
         .then(json => {
 
             if (json.cod === '404') {
-                container.style.height = '400px';
+                container.style.height = '410px'; // Penyesuaian tinggi error
                 weatherBox.style.display = 'none';
                 weatherDetails.style.display = 'none';
                 error404.style.display = 'block';
@@ -34,27 +34,23 @@ search.addEventListener('click', () => {
             const humidity = document.querySelector('.weather-details .humidity span');
             const wind = document.querySelector('.weather-details .wind span');
 
+            // Pastikan folder anda bernama 'images' (huruf kecil)
             switch (json.weather[0].main) {
                 case 'Clear':
                     image.src = 'images/clear.png';
                     break;
-
                 case 'Rain':
                     image.src = 'images/rain.png';
                     break;
-
                 case 'Snow':
                     image.src = 'images/snow.png';
                     break;
-
                 case 'Clouds':
                     image.src = 'images/cloud.png';
                     break;
-
                 case 'Haze':
                     image.src = 'images/mist.png';
                     break;
-
                 default:
                     image.src = '';
             }
@@ -64,14 +60,13 @@ search.addEventListener('click', () => {
             humidity.innerHTML = `${json.main.humidity}%`;
             wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
 
-            weatherBox.style.display = '';
-            weatherDetails.style.display = '';
+            // Tampilkan elemen
+            weatherBox.style.display = 'block';
+            weatherDetails.style.display = 'flex';
             weatherBox.classList.add('fadeIn');
             weatherDetails.classList.add('fadeIn');
-            container.style.height = '590px';
-
-
+            
+            // Perubahan tinggi container yang halus
+            container.style.height = '600px'; 
         });
-
-
 });

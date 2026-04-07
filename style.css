@@ -1,184 +1,230 @@
-*{
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* --- Reset Dasar --- */
+* {
     margin: 0;
     padding: 0;
     border: 0;
     outline: none;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-body{
+/* --- Tampilan Utama (Body) --- */
+body {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #06283D;
+    /* Background Biru Tua yang Elegan */
+    background-color: #0c1c2c;
 }
 
-.container{
+/* --- Container Utama (Kartu) --- */
+.container {
     position: relative;
-    width: 400px;
-    height: 105px;
-    background: #fff;
-    padding: 28px 32px;
+    width: 420px;
+    height: 105px; /* Tinggi awal hanya search bar */
+    /* Efek Neumorphism: Latar belakang & Shadow */
+    background: #e6eef4;
+    padding: 25px 30px;
     overflow: hidden;
-    border-radius: 18px;
-    font-family: 'Roboto', sans-serif;
-    transition: 0.6s ease-out;
+    border-radius: 25px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3),
+                -10px -10px 20px rgba(255, 255, 255, 0.05);
+    /* Transisi Halus saat tinggi berubah */
+    transition: height 0.6s ease-out, box-shadow 0.3s ease;
 }
 
-.search-box{
+.container:hover {
+    box-shadow: 12px 12px 25px rgba(0, 0, 0, 0.35),
+                -12px -12px 25px rgba(255, 255, 255, 0.07);
+}
+
+/* --- Kotak Pencarian --- */
+.search-box {
     width: 100%;
-    height: min-content;
+    height: 55px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: #f0f4f8;
+    border-radius: 30px;
+    padding-left: 20px;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.5);
 }
 
-.search-box input{
+.search-box > i {
+    color: #317fbb;
+    font-size: 22px;
+}
+
+.search-box input {
     color: #06283D;
-    width: 80%;
-    font-size: 24px;
+    width: 70%;
+    font-size: 18px;
     font-weight: 500;
-    text-transform: uppercase;
-    padding-left: 32px;
+    background: transparent;
+    padding-left: 10px;
 }
 
-.search-box input::placeholder{
-    font-size: 20px;
-    font-weight: 500;
-    color: #06283D;
-    text-transform: capitalize;
+.search-box input::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: #a0aab5;
 }
 
-.search-box button{
+/* Tombol Cari (Neumorphic) */
+.search-box button {
     cursor: pointer;
     width: 50px;
     height: 50px;
-    color: #06283D;
-    background: #dff6ff;
-    border-radius: 50%;
-    font-size: 22px;
-    transition: 0.4s ease;
-}
-
-.search-box button:hover{
     color: #fff;
-    background: #06283D;
-}
-
-.search-box i{
-    position: absolute;
-    color: #06283D;
-    font-size: 28px;
-}
-
-.weather-box{
-    text-align: center;
-}
-
-.weather-box img{
-    width: 60%;
-    margin-top: 30px;
-}
-
-.weather-box .temperature{
-    position: relative;
-    color: #06283D;
-    font-size: 4rem;
-    font-weight: 800;
-    margin-top: 30px;
-    margin-left: -16px;
-}
-
-.weather-box .temperature span{
-    position: absolute;
-    margin-left: 4px;
-    font-size: 1.5rem;
-}
-
-.weather-box .description{
-    color: #06283D;
-    font-size: 22px;
-    font-weight: 500;
-    text-transform: capitalize;
-}
-
-.weather-details{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-}
-
-.weather-details .humidity, .weather-details .wind{
+    /* Gradasi Biru yang Modern */
+    background: linear-gradient(145deg, #3795d9, #2e7eb9);
+    border-radius: 50%;
+    font-size: 20px;
     display: flex;
     align-items: center;
-    width: 50%;
-    height: 100px;
+    justify-content: center;
+    margin-right: 3px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2),
+                -3px -3px 6px rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease;
 }
 
-.weather-details .humidity{
-    padding-left: 20px;
-    justify-content: flex-start;
+.search-box button:hover {
+    background: linear-gradient(145deg, #2e7eb9, #3795d9);
+    transform: scale(1.05);
 }
 
-.weather-details .wind{
-    padding-right: 20px;
-    justify-content: flex-end;
+.search-box button:active {
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(0.98);
 }
 
-.weather-details i{
-    color: #06283D;
-    font-size: 26px;
-    margin-right: 10px;
-    margin-top: 6px;
+.search-box button i {
+    color: #fff;
+    position: relative; /* Override previous rules */
 }
 
-.weather-details span{
-    color: #06283D;
-    font-size: 22px;
-    font-weight: 500;
+/* --- Tampilan Cuaca Utama --- */
+.weather-box {
+    text-align: center;
+    display: none; /* Awalnya sembunyi */
+    margin-top: 25px;
 }
 
-.weather-details i{
-    color: #06283D;
+.weather-box img {
+    width: 55%;
+    /* Efek bayangan lembut pada ikon cuaca */
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.2));
+    margin-bottom: 10px;
+}
+
+.weather-box .temperature {
+    position: relative;
+    color: #1d3557;
+    font-size: 4.5rem;
+    font-weight: 800;
+}
+
+.weather-box .temperature span {
+    position: absolute;
+    top: 10px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.weather-box .description {
+    color: #457b9d;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-top: -10px;
+}
+
+/* --- Detail Cuaca (Bawah) --- */
+.weather-details {
+    width: 100%;
+    display: none; /* Awalnya sembunyi */
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #dbe6ef;
+}
+
+.weather-details .humidity,
+.weather-details .wind {
+    display: flex;
+    align-items: center;
+    width: 48%;
+    height: 80px;
+    background: #f0f4f8;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.05),
+                inset -3px -3px 6px rgba(255, 255, 255, 0.5);
+}
+
+.weather-details i {
+    color: #317fbb;
+    font-size: 28px;
+    margin-right: 15px;
+}
+
+.weather-details .text {
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-details span {
+    color: #1d3557;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.weather-details p {
+    color: #6c757d;
     font-size: 14px;
     font-weight: 500;
 }
 
-.not-found{
+/* --- Tampilan Not Found --- */
+.not-found {
     width: 100%;
     text-align: center;
-    margin-top: 50px;
-    scale: 0;
-    opacity: 0;
-    display: none;
+    margin-top: 40px;
+    display: none; /* Awalnya sembunyi */
 }
 
-.not-found img{
-    width: 70%;
+.not-found img {
+    width: 60%;
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.2));
 }
 
-.not-found p{
-    color: #06283D;
-    font-size: 22px;
-    font-weight: 500;
-    margin-top: 12px;
+.not-found p {
+    color: #e63946; /* Warna merah error */
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 15px;
 }
 
-.weather-box, .weather-details{
-    scale: 0;
-    opacity: 0;
+/* --- Animasi FadeIn --- */
+.fadeIn {
+    animation: 0.6s fadeIn forwards;
 }
 
-.fadeIn{
-    animation: 0.5s fadeIn forwards;
-    animation-delay: 0.5s;
-}
-
-@keyframes fadeIn{
-    to{
-        scale: 1;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
         opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
