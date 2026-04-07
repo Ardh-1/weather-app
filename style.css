@@ -17,7 +17,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Background Biru Tua yang Elegan */
     background-color: #0c1c2c;
 }
 
@@ -25,15 +24,13 @@ body {
 .container {
     position: relative;
     width: 420px;
-    height: 105px; /* Tinggi awal hanya search bar */
-    /* Efek Neumorphism: Latar belakang & Shadow */
+    height: 105px; 
     background: #e6eef4;
     padding: 25px 30px;
     overflow: hidden;
     border-radius: 25px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3),
                 -10px -10px 20px rgba(255, 255, 255, 0.05);
-    /* Transisi Halus saat tinggi berubah */
     transition: height 0.6s ease-out, box-shadow 0.3s ease;
 }
 
@@ -56,9 +53,10 @@ body {
                 inset -4px -4px 8px rgba(255, 255, 255, 0.5);
 }
 
-.search-box > i {
+/* Penyesuaian Ikon Lokasi Boxicons */
+.search-box i.bx {
     color: #317fbb;
-    font-size: 22px;
+    font-size: 24px; /* Ukuran Boxicons biasanya lebih kecil sedikit dari FA */
 }
 
 .search-box input {
@@ -82,10 +80,8 @@ body {
     width: 50px;
     height: 50px;
     color: #fff;
-    /* Gradasi Biru yang Modern */
     background: linear-gradient(145deg, #3795d9, #2e7eb9);
     border-radius: 50%;
-    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,6 +89,14 @@ body {
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2),
                 -3px -3px 6px rgba(255, 255, 255, 0.1);
     transition: 0.3s ease;
+}
+
+/* Penyesuaian Ikon Search di dalam Button */
+.search-box button i.bx {
+    color: #fff;
+    font-size: 22px;
+    position: relative;
+    top: 1px; /* Koreksi vertikal agar terlihat center sempurna */
 }
 
 .search-box button:hover {
@@ -105,21 +109,15 @@ body {
     transform: scale(0.98);
 }
 
-.search-box button i {
-    color: #fff;
-    position: relative; /* Override previous rules */
-}
-
 /* --- Tampilan Cuaca Utama --- */
 .weather-box {
     text-align: center;
-    display: none; /* Awalnya sembunyi */
+    display: none; 
     margin-top: 25px;
 }
 
 .weather-box img {
     width: 55%;
-    /* Efek bayangan lembut pada ikon cuaca */
     filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.2));
     margin-bottom: 10px;
 }
@@ -149,7 +147,7 @@ body {
 /* --- Detail Cuaca (Bawah) --- */
 .weather-details {
     width: 100%;
-    display: none; /* Awalnya sembunyi */
+    display: none; 
     justify-content: space-between;
     margin-top: 30px;
     padding-top: 20px;
@@ -169,10 +167,11 @@ body {
                 inset -3px -3px 6px rgba(255, 255, 255, 0.5);
 }
 
-.weather-details i {
+/* Penyesuaian Ikon Detail Cuaca */
+.weather-details i.bx {
     color: #317fbb;
-    font-size: 28px;
-    margin-right: 15px;
+    font-size: 32px;
+    margin-right: 12px;
 }
 
 .weather-details .text {
@@ -198,7 +197,7 @@ body {
     width: 100%;
     text-align: center;
     margin-top: 40px;
-    display: none; /* Awalnya sembunyi */
+    display: none; 
 }
 
 .not-found img {
@@ -207,13 +206,13 @@ body {
 }
 
 .not-found p {
-    color: #e63946; /* Warna merah error */
+    color: #e63946; 
     font-size: 20px;
     font-weight: 600;
     margin-top: 15px;
 }
 
-/* --- Animasi FadeIn --- */
+/* --- Animasi --- */
 .fadeIn {
     animation: 0.6s fadeIn forwards;
 }
