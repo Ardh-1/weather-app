@@ -68,5 +68,9 @@ search.addEventListener('click', () => {
             
             // Perubahan tinggi container yang halus
             container.style.height = '600px'; 
+        })
+        .catch(err => {
+            console.error(err);
+            alert("Terjadi kesalahan jaringan atau server tidak merespon");
         });
 });
