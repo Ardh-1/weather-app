@@ -43,6 +43,8 @@ weather-app/
 
 ├── script.js
 
+├── config.js
+
 └── Images/
 
 ---
