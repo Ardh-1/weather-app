@@ -1,35 +1,39 @@
 # 🌦️ Weather App
 
-A simple weather application built using **HTML, CSS, and JavaScript** that allows users to check the current weather of any city.
+Aplikasi cuaca sederhana berbasis **HTML, CSS, dan JavaScript** untuk menampilkan informasi cuaca berdasarkan nama kota.
 
 ---
 
-## 📌 About
+## 📌 Tentang Project
 
-This project is a basic weather app that fetches weather data from an API and displays it in a simple and user-friendly interface.
-Cocok untuk latihan penggunaan **Fetch API** dan manipulasi DOM di JavaScript.
+Project ini dibuat untuk menampilkan data cuaca secara real-time menggunakan API.
+Cocok untuk latihan:
 
----
-
-## ✨ Features
-
-* 🔍 Search weather by city name
-* 🌡️ Display temperature, weather condition, and location
-* 🖼️ Dynamic UI (background / icon menyesuaikan cuaca)
-* 📱 Responsive design (mobile & desktop)
+* Fetch API
+* DOM Manipulation
+* Event Handling
 
 ---
 
-## 🛠️ Technologies Used
+## ✨ Fitur
+
+* 🔍 Pencarian cuaca berdasarkan nama kota
+* 🌡️ Menampilkan suhu, kondisi cuaca, dan lokasi
+* 🖼️ Tampilan dinamis (ikon/background sesuai cuaca)
+* 📱 Responsive (bisa di HP & desktop)
+
+---
+
+## 🛠️ Teknologi
 
 * HTML5
 * CSS3
 * JavaScript (Vanilla JS)
-* Weather API
+* Weather API (contoh: OpenWeatherMap)
 
 ---
 
-## 📂 Project Structure
+## 📂 Struktur Folder
 
 weather-app/
 ├── index.html
@@ -39,45 +43,64 @@ weather-app/
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Cara Menjalankan Project
 
 ### 1. Clone Repository
 
 git clone https://github.com/Ardh-1/weather-app.git
 
-### 2. Masuk Folder
+### 2. Masuk ke Folder
 
 cd weather-app
 
-### 3. Jalankan Project
+### 3. Jalankan
 
-* Buka file index.html di browser
+* Buka file `index.html` di browser
   ATAU
-* Gunakan Live Server di VS Code
+* Gunakan extension **Live Server** di VS Code
 
 ---
 
-## ⚙️ Configuration (Optional)
+## ⚙️ Setup API Key (WAJIB)
 
-Jika menggunakan API (misalnya OpenWeather):
+Aplikasi ini membutuhkan API key agar bisa mengambil data cuaca.
 
-1. Daftar API key
-2. Masukkan ke dalam script.js
+### 🔑 Cara Mendapatkan API Key
 
-Contoh:
-const apiKey = "YOUR_API_KEY";
+1. Buka website: https://openweathermap.org/api
+2. Klik **Sign Up** (daftar akun)
+3. Login ke dashboard
+4. Masuk ke menu **API Keys**
+5. Copy API key yang tersedia
+
+---
+
+### 🔧 Cara Menambahkan API Key ke Project
+
+Buka file `config.js`, lalu cari bagian seperti ini:
+
+const API_KEY = "YOUR_API_KEY";
+
+Ganti dengan API key kamu:
+
+---
+
+## ⚠️ Catatan Penting
+
+* API key biasanya butuh beberapa menit sampai aktif
+* Jangan share API key ke publik (misalnya di GitHub tanpa .env)
 
 ---
 
 ## 📸 Screenshot
 
-Tambahkan screenshot aplikasi kamu di sini (opsional)
+Tambahkan screenshot aplikasi di sini (opsional)
 
 ---
 
 ## 📄 License
 
-This project is open-source and free to use.
+Project ini bebas digunakan untuk pembelajaran.
 
 ---
 
@@ -87,10 +110,10 @@ This project is open-source and free to use.
 
 ---
 
-## 💡 Notes
+## 💡 Tujuan Pembelajaran
 
-Project ini dibuat untuk latihan dan pembelajaran dasar JavaScript:
+Project ini membantu memahami:
 
-* Fetch API
-* DOM manipulation
-* Event handling
+* Cara mengambil data dari API
+* Cara menampilkan data ke UI
+* Interaksi user dengan JavaScript
