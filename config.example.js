@@ -1,0 +1,3 @@
+const CONFIG = {
+    API_KEY: "MASUKKAN_KEY_ANDA_DISINI"
+};
