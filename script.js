@@ -15,8 +15,6 @@ search.addEventListener('click', () => {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
         .then(response => response.json())
         .then(json => {
-            console.log(json.weather[0].main);
-
             if (json.cod === '404') {
                 container.style.height = '410px'; // Penyesuaian tinggi error
                 weatherBox.style.display = 'none';
