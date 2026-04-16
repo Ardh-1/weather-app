@@ -15,6 +15,7 @@ search.addEventListener('click', () => {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
         .then(response => response.json())
         .then(json => {
+            console.log(json.weather[0].main);
 
             if (json.cod === '404') {
                 container.style.height = '410px'; // Penyesuaian tinggi error
@@ -37,19 +38,28 @@ search.addEventListener('click', () => {
             // Pastikan folder anda bernama 'images' (huruf kecil)
             switch (json.weather[0].main) {
                 case 'Clear':
-                    image.src = 'Images/clear.png';
+                    image.src = 'images/clear.png';
                     break;
                 case 'Rain':
-                    image.src = 'Images/rain.png';
+                    image.src = 'images/rain.png';
                     break;
-                case 'Snow':
-                    image.src = 'Images/snow.png';
+                case 'Thunderstorm':
+                    image.src = 'images/storm.png';
                     break;
                 case 'Clouds':
-                    image.src = 'Images/cloud.png';
+                    image.src = 'images/cloud.png';
                     break;
-                case 'Haze':
-                    image.src = 'Images/mist.png';
+                case 'Drizzle':
+                    image.src = 'images/rain.png';
+                    break;
+                case 'Mist':
+                    image.src = 'images/mist.png';
+                    break;
+                case 'Snow':
+                    image.src = 'images/snow.png';
+                    break;
+                case 'fog':
+                    image.src = 'images/fog.png';
                     break;
                 default:
                     image.src = '';
